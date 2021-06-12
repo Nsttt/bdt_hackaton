@@ -1,45 +1,53 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { Form } from './components';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <>
+      <div className="flex flex-row overflow-hidden h-screen">
+        <div className="container flex flex-col justify-center items-center relative mx-auto max-w-screen-lg h-screen inset-y-0 left-0 bg-bgcolor">
+          <img
+            src="Background.png"
+            alt="background"
+            className="absolute object-cover w-full h-full opacity-10 z-0"
+          />
+          <div className="h-full z-10">
+            <header className="pt-10 w-full z-10 pl-28 pr-28">
+              <img
+                src="logo.png"
+                alt="Logo"
+                className="inline-block w-16 h-16"
+              />
+              <h1 className="inline-block align-middle text-3xl text-white left-20 pl-2">
+                Expanse
+              </h1>
+            </header>
+            <div className="container flex flex-col pt-96 pl-10 pr-10">
+              <img
+                src="“.png"
+                alt="colons"
+                className="self-start px-20 pb-16"
+              />
+              <p className="text-2xl text-white pr-20 pl-20">
+                Nuwe es la plataforma que convierte el desarrollo profesional,
+                la busqueda de trabajo y las conexiones de personas y empresas
+                en un juego. Haciendo que puedas centrarte en lo que te gusta,
+                programar, diseñar, create, planear...
+              </p>
+              <img
+                src="Vector 2.png"
+                alt="arrow"
+                className="self-end pr-24 pt-16"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="container p-12">
+          <Form />
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;

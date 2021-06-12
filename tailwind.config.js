@@ -8,7 +8,9 @@ module.exports = {
   },
   theme: {
     colors: {
-      bg_green: '#6ca464',
+      bgcolor: '#301934',
+      accentcolor: '#DE0F3F',
+      white: '#ffffff',
     },
     extend: {
       fontWeight: ['hover', 'focus'],
@@ -16,10 +18,15 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    // eslint-disable-next-line no-unused-vars
+    backgroundImage: (theme) => ({
+      'feature-image': "url('/public/Background.png')",
+    }),
   },
   variants: {
     extend: {
       display: ['group-hover'],
+      visibility: ['hover', 'focus'],
     },
   },
   plugins: [],

@@ -4,7 +4,7 @@ import useForm from '../hooks/useForm';
 import useModal from '../hooks/useModal';
 
 export default function Form() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [stepName, setStepName] = useState('');
 
   const { error, values } = useForm();

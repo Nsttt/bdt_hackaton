@@ -10,7 +10,7 @@ export default function FirstStep({ goNext }) {
   };
 
   return (
-    <div className="flex flex-col items-start justify-center h-screen px-20 pb-32">
+    <div className="flex flex-col items-start justify-center h-screen lg:px-20 lg:pb-32">
       <div className="">
         <h1 className="text-4xl font-bold p-2">¡Unete a la comunidad!</h1>
         <h2 className="text-2xl p-2">

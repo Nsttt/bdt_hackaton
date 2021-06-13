@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="flex flex-row overflow-hidden h-screen ">
-        <div className="container flex flex-col justify-center items-center relative mx-auto max-w-screen-lg h-screen inset-y-0 left-0 bg-bgcolor">
+        <div className="container hidden lg:flex flex-col justify-center items-center relative mx-auto max-w-screen-lg h-screen inset-y-0 left-0 bg-bgcolor">
           <img
             src="Background.png"
             alt="background"

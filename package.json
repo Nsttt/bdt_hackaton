@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "0.0.0",
   "scripts": {
-    "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
+    "build:css": "TAILWIND_MODE=build NODE_ENV=production postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css --watch",
     "vite:start": "sleep 5 && vite",
     "vite:dist": "cross-env NODE_ENV=production vite build",

@@ -1,14 +1,9 @@
 import React from 'react';
-import useForm from '../hooks/useForm';
 
-export default function FirstStep({ goNext }) {
-  const { handleSelect } = useForm();
+export default function FourthStep() {
+  function updateType() {
 
-  const handleEvent = async (name) => {
-    await handleSelect(name);
-    goNext()
-  };
-
+  }
   return (
     <div className="flex flex-col items-start justify-center h-screen px-20 pb-32">
       <div className="">
@@ -21,11 +16,10 @@ export default function FirstStep({ goNext }) {
         <button
           type="button"
           className="h-auto min-w-min w-full py-7 px-4 my-2 border rounded text-left"
-          onClick={() => handleEvent('Developer')}
         >
           <span className="flex space-x-5 gap-4">
             <img
-              src="Polygon.png"
+              src="Polygon 3-1.png"
               alt="developer button"
               className="object-scale-down"
             />
@@ -38,18 +32,17 @@ export default function FirstStep({ goNext }) {
             <img
               src="right-arrow.svg"
               alt="button arrow"
-              className="w-5"
+              className="invisible hover:visible w-5"
             />
           </span>
         </button>
         <button
           type="button"
           className="h-auto min-w-min w-full py-7 px-4 my-2 border rounded text-left"
-          onClick={() => handleEvent('Business')}
         >
           <span className="flex space-x-5 gap-4">
             <img
-              src="Polygon_border.png"
+              src="Polygon 3.png"
               alt="developer button"
               className="object-scale-down"
             />
@@ -60,7 +53,7 @@ export default function FirstStep({ goNext }) {
             <img
               src="right-arrow.svg"
               alt="button arrow"
-              className="w-5"
+              className="invisible hover:visible w-5"
             />
           </span>
         </button>

@@ -4,7 +4,7 @@ import { Form } from './components';
 function App() {
   return (
     <>
-      <div className="flex flex-row overflow-hidden h-screen">
+      <div className="flex flex-row overflow-hidden h-screen ">
         <div className="container flex flex-col justify-center items-center relative mx-auto max-w-screen-lg h-screen inset-y-0 left-0 bg-bgcolor">
           <img
             src="Background.png"
@@ -12,7 +12,7 @@ function App() {
             className="absolute object-cover w-full h-full opacity-10 z-0"
           />
           <div className="h-full z-10">
-            <header className="pt-10 w-full z-10 pl-28 pr-28">
+            <header className="pt-10 w-full z-10 px-28">
               <img
                 src="logo.png"
                 alt="Logo"
@@ -22,13 +22,13 @@ function App() {
                 Expanse
               </h1>
             </header>
-            <div className="container flex flex-col pt-96 pl-10 pr-10">
+            <div className="container flex flex-col pt-96 px-10">
               <img
                 src="“.png"
                 alt="colons"
                 className="self-start px-20 pb-16"
               />
-              <p className="text-2xl text-white pr-20 pl-20">
+              <p className="text-2xl text-white px-20">
                 Nuwe es la plataforma que convierte el desarrollo profesional,
                 la busqueda de trabajo y las conexiones de personas y empresas
                 en un juego. Haciendo que puedas centrarte en lo que te gusta,

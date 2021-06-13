@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { FirstStep, SecondStep, ThirdStep, FourthStep } from '.';
+import React, { useState, useEffect } from 'react';
+import { FirstStep, SecondStep, ThirdStep, FourthStep, Modal } from '.';
+import useForm from '../hooks/useForm';
+import useModal from '../hooks/useModal';
 
 export default function Form() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   const [stepName, setStepName] = useState('');
-  const [userData, setUserData] = useState({
-    type: '',
-    fullname: '',
-    email: '',
-    password: '',
-    acceptance: false,
-    phone: '',
-    address: '',
-    country: '',
-    keycard_number: '',
-    keycard_code: '',
-  });
+
+  const { error, values } = useForm();
+
+  const { setShowModal } = useModal();
 
   useEffect(() => {
     function getStepName() {
@@ -32,23 +26,21 @@ export default function Form() {
     }
     const currentName = getStepName();
     setStepName(currentName);
-  }, [step]);
+    if (error === true) {
+      setShowModal(true);
+    }
+  }, [step, error]);
 
-  function goNextStep() {
+  const goNextStep = () => {
     if (step === 4) return;
-    setStep(() => step + 1);
-  }
+    setStep(step + 1);
+  };
 
-  function goBackOneStep() {
+  const goBackOneStep = () => {
     if (step === 0) return;
-    setStep(() => step - 1);
-  }
+    setStep(step - 1);
+  };
 
-  function updateData(type, newData) {
-    setUserData((data) => ({ ...data, [type]: newData }));
-    console.log(userData);
-    goNextStep();
-  }
   return (
     <>
       <div className="container flex justify-between">
@@ -88,10 +80,11 @@ export default function Form() {
           )}
         </div>
       </div>
-      {step === 0 && <FirstStep update={updateData} />}
-      {step === 1 && <SecondStep data={userData} update={updateData} />}
-      {step === 2 && <ThirdStep update={updateData} />}
-      {step === 3 && <FourthStep update={updateData} />}
+      {error === true && <Modal message={values.error_message} />}
+      {step === 0 && <FirstStep goNext={goNextStep} />}
+      {step === 1 && <SecondStep goNext={goNextStep} />}
+      {step === 2 && <ThirdStep />}
+      {step === 3 && <FourthStep />}
     </>
   );
 }

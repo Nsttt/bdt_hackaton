@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import useForm from '../hooks/useForm';
 
-export default function SecondStep({ update }) {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [acceptance, setAcceptance] = useState(false);
-  const [error, setError] = useState(null);
+export default function SecondStep({ goNext }) {
+  const { values, setValues, handleSubmit, handleChange } = useForm();
 
   const [type, setType] = useState('password');
 
@@ -14,20 +11,6 @@ export default function SecondStep({ update }) {
       setType('text');
     } else {
       setType('password');
-    }
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (!email) {
-      setError('Debes introducir un Email para continuar.');
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setError('Has introducido un email incorrecto.');
-    } else {
-      update('fullName', fullName);
-      update('password', password);
-      update('acceptance', acceptance);
-      update('email', email);
     }
   }
 
@@ -47,10 +30,10 @@ export default function SecondStep({ update }) {
           Nombre completo*
           <input
             className="w-full py-3 px-4 my-2 border rounded text-left"
-            type="text"
+            type="fullname"
             name="fullname"
             placeholder="Nestor Lopez Lopez"
-            onChange={(event) => setFullName(event.value)}
+            onChange={handleChange}
             autoComplete="full-name"
             required
           />
@@ -59,10 +42,10 @@ export default function SecondStep({ update }) {
           Correo Electronico*
           <input
             className="w-full py-3 px-4 my-2 border rounded text-left"
-            type="text"
+            type="email"
             name="email"
             placeholder="Your Email"
-            onChange={(event) => setEmail(event.value)}
+            onChange={handleChange}
             autoComplete="email"
             required
           />
@@ -80,17 +63,15 @@ export default function SecondStep({ update }) {
             type={type}
             name="password"
             placeholder="Your password"
-            onChange={(event) => setPassword(event.value)}
+            onChange={handleChange}
             autoComplete="current-password"
             required
           />
           <input
             className="my-2"
             type="checkbox"
-            name="password"
-            placeholder="Your password"
-            onChange={() => setAcceptance(true)}
-            autoComplete="current-password"
+            name="acceptance"
+            onChange={handleChange}
             required
           />
           <label className="pl-2">Acepto los terminos y condiciones</label>

@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">BDT Hackaton</h1>
-<p align="center">My projecto para la BDT hackaton.</p>
+<p align="center">Mi proyecto para la BDT hackaton.</p>
 <p align="center"><a href="https://bdt.nstlopez.com">Acceder</a></p>
 <div align="center">
 </div>
